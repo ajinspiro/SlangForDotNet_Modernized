@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CallSLANG/CallSLANG.csproj" />
+  <Project Path="SlangForDotNet/SlangForDotNet.csproj" />
+</Solution>

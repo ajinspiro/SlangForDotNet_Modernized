@@ -1,0 +1,8 @@
+{
+    "profiles":{
+        "default":{
+            "commandName": "Project",
+            "commandLineArgs": "C:\\monorepo\\SlangForDotNet\\STEP4\\script\\First.sl"
+        }
+    }
+}

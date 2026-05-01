@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SLANGINTERPRET/SLANGINTERPRET.csproj" />
+  <Project Path="SLANGCOMPILE/SLANGCOMPILE.csproj" />
+  <Project Path="SlangForDotNet/SlangForDotNet.csproj" />
+</Solution>

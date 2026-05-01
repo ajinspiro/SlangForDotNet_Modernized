@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "default": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\monorepo\\SlangForDotNet_Modernized\\Step_7\\script\\fibrec.sl",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

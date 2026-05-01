@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "default": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\monorepo\\SlangForDotNet_Modernized\\Step_5\\script\\First.sl",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
