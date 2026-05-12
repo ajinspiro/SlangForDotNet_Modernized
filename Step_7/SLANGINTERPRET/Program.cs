@@ -1,6 +1,7 @@
 ﻿
 using System.Collections;
 using SlangForDotNet.AST;
+using SlangForDotNet.ExeGenerator;
 using SlangForDotNet.RDParser;
 
 
@@ -20,44 +21,34 @@ TestFileScript(args[0]);
 /// </summary>
 static void TestFileScript(string filename)
 {
-
+    
     if (filename == null)
-        return;
+            return;
 
 
     // -------------- Read the contents from the file
 
     StreamReader sr = new StreamReader(filename);
     string programs2 = sr.ReadToEnd();
-
+    
 
     //---------------- Creates the Parser Object
     // With Program text as argument 
     RDParser pars = null;
     pars = new RDParser(programs2);
+    TModule p = null;
+    p = pars.DoParse();
 
-    // Create a Compilation Context 
-    //
-    //
-    COMPILATION_CONTEXT ctx = new COMPILATION_CONTEXT();
-
-    //
-    // Call the top level Parsing Routine with 
-    // Compilation Context as the Argument
-    //
-    ArrayList stmts = pars.Parse(ctx);
-
-    //
-    // if we have reached here , the parse process 
-    // is successful... Create a Run time context and 
-    // Call Execute statements of each statement...
-    //
-
-    RUNTIME_CONTEXT f = new RUNTIME_CONTEXT();
-    foreach (Object obj in stmts)
+    if (p == null)
     {
-        Stmt? s = obj as Stmt;
-        s?.Execute(f);
+        Console.WriteLine("Parse Process Failed");
+        return;
     }
-
+    //
+    //  Now that Parse is Successul...
+    //  Do a recursive interpretation...!
+    //
+    RUNTIME_CONTEXT f = new RUNTIME_CONTEXT(p);
+    SYMBOL_INFO fp = p.Execute(f,null); 
+    
 }
